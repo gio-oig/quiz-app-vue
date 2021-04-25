@@ -201,4 +201,12 @@ html {
 .question-box {
 	width: 700px;
 }
+
+@media (max-width: 600px) {
+	.form,
+	.main,
+	.question-box {
+		width: 100%;
+	}
+}
 </style>

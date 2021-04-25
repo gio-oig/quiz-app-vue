@@ -84,4 +84,10 @@ export default {
 	color: #fff;
 	border: none;
 }
+
+@media (max-width: 600px) {
+	.question {
+		line-height: 1.2;
+	}
+}
 </style>
