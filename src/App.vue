@@ -23,9 +23,10 @@
 		<!-- ENd Question Card -->
 		<!-- Result -->
 		<result
-			v-if="isOver && userAnswersLength === 10"
+			v-if="isOver && userAnswersLength === total"
 			:correct="correct"
 			:incorrect="total - correct"
+			:userAnswers="userAnswers"
 			@restart="restart"
 		/>
 	</div>
@@ -143,6 +144,7 @@ export default {
 			isOver,
 			userAnswersLength: computed(() => userAnswers.value.length),
 			correct: computed(() => correctAnswersCount.value),
+			userAnswers,
 			restart,
 			total: TOTAL,
 		};
@@ -168,7 +170,7 @@ html {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	min-height: 100vh;
 	position: relative;
 	overflow: hidden;
 	background-color: #5089cc;

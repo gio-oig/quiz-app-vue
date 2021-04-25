@@ -17,17 +17,25 @@
 			@click="$emit('restart')"
 		/>
 	</div>
+	<question-result
+		v-for="(question, index) in userAnswers"
+		:key="index"
+		:question="question"
+	/>
 </template>
 
 <script>
 import CustomButton from './CustomButton.vue';
+import QuestionResult from './QuestionResult.vue';
 export default {
-	components: { CustomButton },
+	components: { CustomButton, QuestionResult },
 	emits: ['restart'],
 	name: 'Result',
+
 	props: {
 		correct: Number,
 		incorrect: Number,
+		userAnswers: Array,
 	},
 };
 </script>
